@@ -1,0 +1,46 @@
+{
+  "intents": [
+    {
+      "intent": "GetSynonymIntent",
+      "slots": [
+        {
+          "name": "Word",
+          "type": "AMAZON.LITERAL"
+        }
+      ]
+    },
+    {
+      "intent": "GetAntonymIntent",
+      "slots": [
+        {
+          "name": "Word",
+          "type": "AMAZON.LITERAL"
+        }
+      ]
+    },
+    {
+      "intent": "GetPOSIntent",
+      "slots": [
+        {
+          "name": "Word",
+          "type": "AMAZON.LITERAL"
+        }
+      ]
+    },
+    {
+      "intent": "GetRhymeIntent",
+      "slots": [
+        {
+          "name": "Word",
+          "type": "AMAZON.LITERAL"
+        }
+      ]
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    }
+  ]
+}
