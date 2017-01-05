@@ -24,8 +24,8 @@ def build_speechlet_response(title, output, reprompt_text, should_end_session):
 		},
 		'card': {
 			'type': 'Simple',
-			'title': "SessionSpeechlet - " + title,
-			'content': "SessionSpeechlet - " + output
+			'title': title,
+			'content': output
 		},
 		'reprompt': {
 			'outputSpeech': {
@@ -84,10 +84,10 @@ def get_synonym(intent, session):
 	}
 	r = requests.get(url, headers = headers)
 	if len(ast.literal_eval(r.text)["synonyms"]) == 0:
-		return "Sorry, I couldn't find any synonyms for " + word + "."
+		speech_output =  "Sorry, I couldn't find any synonyms for " + word + "."
 	else:
 		speech_output = "A synonym for " + word + " is " + ast.literal_eval(r.text)["synonyms"][0] + "."
-	response = build_speechlet_response(intent['name'], speech_output, None, True)
+	response = build_speechlet_response("Synonym", speech_output, None, True)
 	return build_response({}, response)
 
 def get_antonym(intent, session):
@@ -103,7 +103,7 @@ def get_antonym(intent, session):
 		speech_output = "Sorry, I couldn't find any antonyms for " + word + "."
 	else:
 		speech_output = "An antonym for " + word + " is " + ast.literal_eval(r.text)["antonyms"][0] + "."
-	response = build_speechlet_response(intent['name'], speech_output, None, True)
+	response = build_speechlet_response("Antonym", speech_output, None, True)
 	return build_response({}, response)
 
 def get_pos(intent, session):
@@ -116,7 +116,7 @@ def get_pos(intent, session):
 	}
 	r = requests.get(url, headers = headers)
 	speech_output = word + " is a " + ast.literal_eval(r.text)["results"][0]["partOfSpeech"] + "."
-	response = build_speechlet_response(intent['name'], speech_output, None, True)
+	response = build_speechlet_response("Part of Speech", speech_output, None, True)
 	return build_response({}, response)
 
 def get_rhyme(intent, session):
@@ -129,10 +129,10 @@ def get_rhyme(intent, session):
 	}
 	r = requests.get(url, headers = headers)
 	if len(ast.literal_eval(r.text)["rhymes"]) == 0:
-		return "Sorry, I couldn't find anything that rhymes with " + word + "."
+		speech_output = "Sorry, I couldn't find anything that rhymes with " + word + "."
 	else:
 		speech_output = "A word that rhymes with " + word + " is " + ast.literal_eval(r.text)["rhymes"]["all"][0] + "."
-	response = build_speechlet_response(intent['name'], speech_output, None, True)
+	response = build_speechlet_response("Rhyme", speech_output, None, True)
 	return build_response({}, response)
 
 # --------------- Events ------------------
