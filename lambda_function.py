@@ -1,11 +1,4 @@
-"""
-This sample demonstrates a simple skill built with the Amazon Alexa Skills Kit.
-The Intent Schema, Custom Slots, and Sample Utterances for this skill, as well
-as testing instructions are located at http://amzn.to/1LzFrj6
-
-For additional samples, visit the Alexa Skills Kit Getting Started guide at
-http://amzn.to/1LGWsLG
-"""
+# Based off of the sample Amazon Alexa skill "Space Facts"
 
 from __future__ import print_function
 import requests
@@ -54,7 +47,7 @@ def get_welcome_response():
 
 	session_attributes = {}
 	card_title = "Welcome"
-	speech_output = "Welcome to WordWorks. Ask for a synonym, an antonym, " \
+	speech_output = "Welcome to WordBox. Ask for a synonym, an antonym, " \
 					"part of speech, or a rhyme for a word by saying " \
 					"something like 'synonym for happy'"
 	# If the user either does not reply to the welcome message or says something
@@ -76,7 +69,6 @@ def handle_session_end_request():
 
 def get_synonym(intent, session):
 	word = intent["slots"]["Word"]["value"]
-	# Using requests module
 	url = "https://wordsapiv1.p.mashape.com/words/" + word + "/synonyms"
 	headers = {
 		"X-Mashape-Key": os.environ["MASHAPE_KEY_PRODUCTION"],
@@ -92,7 +84,6 @@ def get_synonym(intent, session):
 
 def get_antonym(intent, session):
 	word = intent["slots"]["Word"]["value"]
-	# Using requests module
 	url = "https://wordsapiv1.p.mashape.com/words/" + word + "/antonyms"
 	headers = {
 		"X-Mashape-Key": os.environ["MASHAPE_KEY_PRODUCTION"],
@@ -108,7 +99,6 @@ def get_antonym(intent, session):
 
 def get_pos(intent, session):
 	word = intent["slots"]["Word"]["value"]
-	# Using requests module
 	url = "https://wordsapiv1.p.mashape.com/words/" + word
 	headers = {
 		"X-Mashape-Key": os.environ["MASHAPE_KEY_PRODUCTION"],
@@ -121,7 +111,6 @@ def get_pos(intent, session):
 
 def get_rhyme(intent, session):
 	word = intent["slots"]["Word"]["value"]
-	# Using requests module
 	url = "https://wordsapiv1.p.mashape.com/words/" + word + "/rhymes"
 	headers = {
 		"X-Mashape-Key": os.environ["MASHAPE_KEY_PRODUCTION"],
