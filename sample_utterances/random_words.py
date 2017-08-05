@@ -3,7 +3,7 @@
 import os
 
 
-with open(os.path.dirname(os.path.realpath(__file__)) + "/freq_small.txt", "r") as f:
+with open(os.path.dirname(os.path.realpath(__file__)) + "/freq.txt", "r") as f:
 	all_words = [line.strip() for line in f]
 
 intents = [
@@ -21,14 +21,12 @@ intents = [
 			("GetPronunciationIntent", "pronunciation of")
 ]
 
-with open(os.path.dirname(os.path.realpath(__file__)) + "/sample_utterances_small.txt", "w") as f:
-	for (intent, utterance) in intents:
+with open(os.path.dirname(os.path.realpath(__file__)) + "/sample_utterances.txt", "w") as f:
+	for intent, utterance in intents:
 		for word in all_words:
 			if isinstance(utterance, str):
-				print(1)
 				# print intent + " " + utterance + " {" + word + "|Word}"
 				f.write(intent + " " + utterance + " {" + word + "|Word}" + "\n")
 			elif isinstance(utterance, list):
-				print(2)
 				# print intent + " " + utterance[0] + " {" + word + "|Word} " + utterance[1]
 				f.write(intent + " " + utterance[0] + " {" + word + "|Word} " + utterance[1] + "\n")
