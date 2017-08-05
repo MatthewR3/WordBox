@@ -37,6 +37,42 @@
       ]
     },
     {
+      "intent": "GetDefinitionIntent",
+      "slots": [
+        {
+          "name": "Word",
+          "type": "AMAZON.LITERAL"
+        }
+      ]
+    },
+    {
+      "intent": "GetSyllablesIntent",
+      "slots": [
+        {
+          "name": "Word",
+          "type": "AMAZON.LITERAL"
+        }
+      ]
+    },
+    {
+      "intent": "GetFrequencyIntent",
+      "slots": [
+        {
+          "name": "Word",
+          "type": "AMAZON.LITERAL"
+        }
+      ]
+    },
+    {
+      "intent": "GetPronunciationIntent",
+      "slots": [
+        {
+          "name": "Word",
+          "type": "AMAZON.LITERAL"
+        }
+      ]
+    },
+    {
       "intent": "AMAZON.HelpIntent"
     },
     {

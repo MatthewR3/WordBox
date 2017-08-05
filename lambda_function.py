@@ -48,15 +48,12 @@ def get_welcome_response():
 
 	session_attributes = {}
 	card_title = "Welcome"
-	speech_output = "Welcome to WordBox. Ask for a synonym, an antonym, " \
-					"part of speech, or a rhyme for a word by saying " \
-					"something like 'synonym for happy'"
+	speech_output = "Welcome to WordBox. Ask for a synonym, an antonym, part of speech, rhyme, definition, syllables, frequency, or pronunciation for a word by saying something like 'synonym for happy'"
 	# If the user either does not reply to the welcome message or says something
 	# that is not understood, they will be prompted again with this text.
-	reprompt_text = "Ask for a synonym, antonym, part of speech, or rhyme!"
+	reprompt_text = "Ask for a synonym, antonym, part of speech, rhyme, definition, syllables, frequency, or pronunciation!"
 	should_end_session = False
-	return build_response(session_attributes, build_speechlet_response(
-		card_title, speech_output, reprompt_text, should_end_session))
+	return build_response(session_attributes, build_speechlet_response(card_title, speech_output, reprompt_text, should_end_session))
 
 
 def handle_session_end_request():
@@ -185,7 +182,7 @@ def get_pronunciation(intent, session):
 		speech_output = "You can pronounce " + word + " as " + ast.literal_eval(r.text)["pronunciation"] "."
 	# Multiple pronunications
 	else:
-		speech_output = "You can pronounce " + word + " a few ways. " + ". ".join([("As a " + key + " it's pronounced as " value) for key, value in ast.literal_eval(r.text)["pronunciation"]]) + "."
+		speech_output = "You can pronounce " + word + " a few ways. " + ". ".join([("As a " + key + " it's pronounced as " value) for key, value in ast.literal_eval(r.text)["pronunciation"].items()]) + "."
 	response = build_speechlet_response("Pronunciation", speech_output, None, True)
 	return build_response({}, response)
 
@@ -227,6 +224,14 @@ def on_intent(intent_request, session):
 		return get_pos(intent, session)
 	elif intent_name == "GetRhymeIntent":
 		return get_rhyme(intent, session)
+	elif intent_name == "GetDefinitionIntent":
+		return get_definition(intent, session)
+	elif intent_name == "GetSyllablesIntent":
+		return get_syllables(intent, session)
+	elif intent_name == "GetFrequencyIntent":
+		return get_frequency(intent, session)
+	elif intent_name == "GetPronunciationIntent":
+		return get_pronunciation(intent, session)
 	elif intent_name == "AMAZON.HelpIntent":
 		return get_welcome_response()
 	elif intent_name == "AMAZON.CancelIntent" or intent_name == "AMAZON.StopIntent":
