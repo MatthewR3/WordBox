@@ -4,6 +4,7 @@ from __future__ import print_function
 import requests
 import os
 import ast
+import random
 
 
 
@@ -78,7 +79,7 @@ def get_synonym(intent, session):
 	if len(ast.literal_eval(r.text)["synonyms"]) == 0:
 		speech_output =  "Sorry, I couldn't find any synonyms for " + word + "."
 	else:
-		speech_output = "A synonym for " + word + " is " + ast.literal_eval(r.text)["synonyms"][0] + "."
+		speech_output = "A synonym for " + word + " is " + random.choice(ast.literal_eval(r.text)["synonyms"]) + "."
 	response = build_speechlet_response("Synonym", speech_output, None, True)
 	return build_response({}, response)
 
@@ -93,7 +94,7 @@ def get_antonym(intent, session):
 	if len(ast.literal_eval(r.text)["antonyms"]) == 0:
 		speech_output = "Sorry, I couldn't find any antonyms for " + word + "."
 	else:
-		speech_output = "An antonym for " + word + " is " + ast.literal_eval(r.text)["antonyms"][0] + "."
+		speech_output = "An antonym for " + word + " is " + random.choice(ast.literal_eval(r.text)["antonyms"]) + "."
 	response = build_speechlet_response("Antonym", speech_output, None, True)
 	return build_response({}, response)
 
@@ -120,8 +121,72 @@ def get_rhyme(intent, session):
 	if len(ast.literal_eval(r.text)["rhymes"]) == 0:
 		speech_output = "Sorry, I couldn't find anything that rhymes with " + word + "."
 	else:
-		speech_output = "A word that rhymes with " + word + " is " + ast.literal_eval(r.text)["rhymes"]["all"][0] + "."
+		speech_output = "A word that rhymes with " + word + " is " + random.choice(ast.literal_eval(r.text)["rhymes"]["all"]) + "."
 	response = build_speechlet_response("Rhyme", speech_output, None, True)
+	return build_response({}, response)
+
+def get_definition(intent, session):
+	word = intent["slots"]["Word"]["value"]
+	url = "https://wordsapiv1.p.mashape.com/words/" + word + "/definitions"
+	headers = {
+		"X-Mashape-Key": os.environ["MASHAPE_KEY_PRODUCTION"],
+		"Accept": "application/json"
+	}
+	r = requests.get(url, headers = headers)
+	if len(ast.literal_eval(r.text)["definitions"]) == 0:
+		speech_output = "Sorry, I couldn't find any definitions for " + word + "."
+	else:
+		speech_output = "The most popular definition for " + word + " is " + ast.literal_eval(r.text)["definitions"][0]["definition"] + "."
+	response = build_speechlet_response("Definition", speech_output, None, True)
+	return build_response({}, response)
+
+def get_syllables(intent, session):
+	word = intent["slots"]["Word"]["value"]
+	url = "https://wordsapiv1.p.mashape.com/words/" + word + "/syllables"
+	headers = {
+		"X-Mashape-Key": os.environ["MASHAPE_KEY_PRODUCTION"],
+		"Accept": "application/json"
+	}
+	r = requests.get(url, headers = headers)
+	if not ast.literal_eval(r.text)["syllables"]:
+		speech_output = "Sorry, I couldn't find any syllables for " + word + "."
+	else:
+		speech_output = "There are " + ast.literal_eval(r.text)["syllables"]["count"] + " syllables in" + word + ". They are: " + ", ".join(ast.literal_eval(r.text)["syllables"]["list"]) + "."
+	response = build_speechlet_response("Syllables", speech_output, None, True)
+	return build_response({}, response)
+
+def get_frequency(intent, session):
+	word = intent["slots"]["Word"]["value"]
+	url = "https://wordsapiv1.p.mashape.com/words/" + word + "/frequency"
+	headers = {
+		"X-Mashape-Key": os.environ["MASHAPE_KEY_PRODUCTION"],
+		"Accept": "application/json"
+	}
+	r = requests.get(url, headers = headers)
+	if not ast.literal_eval(r.text)["frequency"]):
+		speech_output = "Sorry, I couldn't find the frequency of " + word + "."
+	else:
+		speech_output = word + " is used about " + ast.literal_eval(r.text)["frequency"]["perMillion"] + " times per million words in writing."
+	response = build_speechlet_response("Frequency", speech_output, None, True)
+	return build_response({}, response)
+
+def get_pronunciation(intent, session):
+	word = intent["slots"]["Word"]["value"]
+	url = "https://wordsapiv1.p.mashape.com/words/" + word + "/rhymes"
+	headers = {
+		"X-Mashape-Key": os.environ["MASHAPE_KEY_PRODUCTION"],
+		"Accept": "application/json"
+	}
+	r = requests.get(url, headers = headers)
+	if not ast.literal_eval(r.text)["pronunication"]):
+		speech_output = "Sorry, I couldn't find any pronunications for " + word + "."
+	# Only one pronunciation
+	if "all" in ast.literal_eval(r.text)["pronunciation"]:
+		speech_output = "You can pronounce " + word + " as " + ast.literal_eval(r.text)["pronunciation"] "."
+	# Multiple pronunications
+	else:
+		speech_output = "You can pronounce " + word + " a few ways. " + ". ".join([("As a " + key + " it's pronounced as " value) for key, value in ast.literal_eval(r.text)["pronunciation"]]) + "."
+	response = build_speechlet_response("Pronunciation", speech_output, None, True)
 	return build_response({}, response)
 
 # --------------- Events ------------------
