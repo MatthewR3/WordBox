@@ -148,7 +148,7 @@ def get_syllables(intent, session):
 	if not ast.literal_eval(r.text)["syllables"]:
 		speech_output = "Sorry, I couldn't find any syllables for " + word + "."
 	else:
-		speech_output = "There are " + ast.literal_eval(r.text)["syllables"]["count"] + " syllables in" + word + ". They are: " + ", ".join(ast.literal_eval(r.text)["syllables"]["list"]) + "."
+		speech_output = "There are " + str(ast.literal_eval(r.text)["syllables"]["count"]) + " syllables in" + word + ". They are: " + ", ".join(ast.literal_eval(r.text)["syllables"]["list"]) + "."
 	response = build_speechlet_response("Syllables", speech_output, None, True)
 	return build_response({}, response)
 
@@ -160,29 +160,29 @@ def get_frequency(intent, session):
 		"Accept": "application/json"
 	}
 	r = requests.get(url, headers = headers)
-	if not ast.literal_eval(r.text)["frequency"]):
+	if not ast.literal_eval(r.text)["frequency"]:
 		speech_output = "Sorry, I couldn't find the frequency of " + word + "."
 	else:
-		speech_output = word + " is used about " + ast.literal_eval(r.text)["frequency"]["perMillion"] + " times per million words in writing."
+		speech_output = word + " is used about " + str(ast.literal_eval(r.text)["frequency"]["perMillion"]) + " times per million words in writing."
 	response = build_speechlet_response("Frequency", speech_output, None, True)
 	return build_response({}, response)
 
 def get_pronunciation(intent, session):
 	word = intent["slots"]["Word"]["value"]
-	url = "https://wordsapiv1.p.mashape.com/words/" + word + "/rhymes"
+	url = "https://wordsapiv1.p.mashape.com/words/" + word + "/pronunciation"
 	headers = {
 		"X-Mashape-Key": os.environ["MASHAPE_KEY_PRODUCTION"],
 		"Accept": "application/json"
 	}
 	r = requests.get(url, headers = headers)
-	if not ast.literal_eval(r.text)["pronunication"]):
+	if not ast.literal_eval(r.text)["pronunciation"]:
 		speech_output = "Sorry, I couldn't find any pronunications for " + word + "."
 	# Only one pronunciation
-	if "all" in ast.literal_eval(r.text)["pronunciation"]:
-		speech_output = "You can pronounce " + word + " as " + ast.literal_eval(r.text)["pronunciation"] "."
+	if len(ast.literal_eval(r.text)["pronunciation"]) == 1:
+		speech_output = "You can pronounce " + word + " as " + ast.literal_eval(r.text)["pronunciation"]["all"] + "."
 	# Multiple pronunications
-	else:
-		speech_output = "You can pronounce " + word + " a few ways. " + ". ".join([("As a " + key + " it's pronounced as " value) for key, value in ast.literal_eval(r.text)["pronunciation"].items()]) + "."
+	elif len(ast.literal_eval(r.text)["pronunciation"]) > 1:
+		speech_output = "You can pronounce " + word + " a few ways. " + "".join([(("As a " + key + " it's pronounced as " + value + ". ") if key != "all" else "") for key, value in ast.literal_eval(r.text)["pronunciation"].items()])
 	response = build_speechlet_response("Pronunciation", speech_output, None, True)
 	return build_response({}, response)
 
