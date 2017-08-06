@@ -51,7 +51,7 @@ intent_json["intents"].append({"name": "AMAZON.StopIntent", "samples": ["cancel"
 for intent, utterance in custom_intents:
 	all_samples = []
 	for word in all_words:
-			all_samples.append(utterance[0] + " {" + word.replace(".", "") + "|Word}" + ((" " + utterance[1]) if (len(utterance) > 1) else ""))
+		all_samples.append(utterance[0] + " {" + word + "|Word}" + ((" " + utterance[1]) if (len(utterance) > 1) else ""))
 	intent_exists = False
 	for json_intent in intent_json["intents"]:
 		# print(intent)
@@ -61,7 +61,7 @@ for intent, utterance in custom_intents:
 			intent_exists = True
 			break
 	if not intent_exists:
-		intent_json["intents"].append({"name": intent, "samples": all_samples, "slots": [{"name": "Word", "type": "LITERAL", "samples": []}]})
+		intent_json["intents"].append({"name": intent, "samples": all_samples, "slots": [{"name": "Word", "type": "LITERAL", "samples": all_words}]})
 
 for slot, values in custom_slots:
 	intent_json["types"].append({"name": slot, "values": values})
