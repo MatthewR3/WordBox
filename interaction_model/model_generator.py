@@ -19,7 +19,7 @@ import json
 dev = 1
 
 input_file = "freq_small.txt" if dev else "freq.txt"
-output_file = "sample_utterances_small.txt" if dev else "sample_utterances.txt"
+output_file = "interaction_model_small.json" if dev else "interaction_model.json"
 
 with open(os.path.dirname(os.path.realpath(__file__)) + "/freq_small.txt", "r") as f:
 	all_words = [line.strip() for line in f]
