@@ -59,10 +59,10 @@ def get_all_commands():
     session_attributes = {}
     card_title = "All Commands"
     speech_output = "You can ask for a synonym, antonym, rhyme, definition, part of speech, syllables, or frequency of a word by saying something like 'synonym for happy'. You can \
-						also ask for a random synonym, antonym, definition, or rhyme by saying something like 'random synonym for happy'. If you want all of them, say something like 'all synonyms for happy.'"
+                        also ask for a random synonym, antonym, definition, or rhyme by saying something like 'random synonym for happy'. If you want all of them, say something like 'all synonyms for happy.'"
     # If the user either does not reply to the welcome message or says something
     # that is not understood, they will be prompted again with this text.
-    reprompt_text = "Ask for a synonym, antonym, part of speech, rhyme, definition, syllables, frequency, or pronunciation!"
+    reprompt_text = "Ask for a synonym, antonym, part of speech, rhyme, definition, syllables, or frequency of a word! Or say 'all commands' to get hear all commands."
     should_end_session = False
     return build_response(session_attributes, build_speechlet_response(card_title, speech_output, reprompt_text, should_end_session))
 
@@ -117,7 +117,7 @@ def get_all_synonyms(intent, session):
     if len(ast.literal_eval(r.text)["synonyms"]) == 0:
         speech_output =  "Sorry, I couldn't find any synonyms for " + word + "."
     else:
-        speech_output = "The synonyms for " + word + " are " + ", ".join([synonym for synonym in ast.literal_eval(r.text)["synonyms"]]) + "."
+        speech_output = "The synonyms for " + word + " are " + ", ".join([synonym for synonym in ast.literal_eval(r.text)["synonyms"][:-1]]) + ", and " + ast.literal_eval(r.text)["synonyms"][-1] + "."
     response = build_speechlet_response("Synonyms", speech_output, None, True)
     return build_response({}, response)
 
@@ -162,7 +162,7 @@ def get_all_antonyms(intent, session):
     if len(ast.literal_eval(r.text)["antonyms"]) == 0:
         speech_output = "Sorry, I couldn't find any antonyms for " + word + "."
     else:
-        speech_output = "The antonyms for " + word + " are " + ", ".join([antonyms for antonym in ast.literal_eval(r.text)["antonyms"]]) + "."
+        speech_output = "The antonyms for " + word + " are " + ", ".join([antonyms for antonym in ast.literal_eval(r.text)["antonyms"][:-1]]) + ", and " + ast.literal_eval(r.text)["antonyms"][-1] + "."
     response = build_speechlet_response("Antonyms", speech_output, None, True)
     return build_response({}, response)
 
@@ -249,7 +249,8 @@ def get_all_definitions(intent, session):
     if len(ast.literal_eval(r.text)["definitions"]) == 0:
         speech_output = "Sorry, I couldn't find any definitions for " + word + "."
     else:
-        speech_output = word + " has " + str(len(ast.literal_eval(r.text)["pronunciation"])) + " definitions. It could mean " + ", ".join([definition["definition"] for definition in ast.literal_eval(r.text)["definitions"].items()]) + "."
+        definitions_list = ast.literal_eval(r.text)["definitions"]
+        speech_output = word + " has " + str(len(definitions_list)) + " definitions. It could mean " + ", ".join([definition["definition"] for definition in definitions_list[:-1]]) + ", or " + definitions_list[-1]["definition"] + "."
     response = build_speechlet_response("Definitions", speech_output, None, True)
     return build_response({}, response)
 

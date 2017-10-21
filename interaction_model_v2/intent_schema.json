@@ -1,1 +1,139 @@
-{"intents": [{"intent": "AMAZON.CancelIntent"}, {"intent": "AMAZON.HelpIntent"}, {"intent": "AMAZON.StopIntent"}, {"intent": "GetSynonymIntent", "slots": [{"name": "WORD", "type": "ANY_WORD"}]}, {"intent": "GetRandomSynonymIntent", "slots": [{"name": "WORD", "type": "ANY_WORD"}]}, {"intent": "GetAllSynonymsIntent", "slots": [{"name": "WORD", "type": "ANY_WORD"}]}, {"intent": "GetAntonymIntent", "slots": [{"name": "WORD", "type": "ANY_WORD"}]}, {"intent": "GetRandomAntonymIntent", "slots": [{"name": "WORD", "type": "ANY_WORD"}]}, {"intent": "GetAllAntonymsIntent", "slots": [{"name": "WORD", "type": "ANY_WORD"}]}, {"intent": "GetPOSIntent", "slots": [{"name": "WORD", "type": "ANY_WORD"}]}, {"intent": "GetRhymeIntent", "slots": [{"name": "WORD", "type": "ANY_WORD"}]}, {"intent": "GetRandomRhymeIntent", "slots": [{"name": "WORD", "type": "ANY_WORD"}]}, {"intent": "GetDefinitionIntent", "slots": [{"name": "WORD", "type": "ANY_WORD"}]}, {"intent": "GetRandomDefinitionIntent", "slots": [{"name": "WORD", "type": "ANY_WORD"}]}, {"intent": "GetAllDefinitionsIntent", "slots": [{"name": "WORD", "type": "ANY_WORD"}]}, {"intent": "GetSyllablesIntent", "slots": [{"name": "WORD", "type": "ANY_WORD"}]}, {"intent": "GetFrequencyIntent", "slots": [{"name": "WORD", "type": "ANY_WORD"}]}]}
+{
+    "intents": [
+        {
+            "intent": "AMAZON.CancelIntent"
+        },
+        {
+            "intent": "AMAZON.HelpIntent"
+        },
+        {
+            "intent": "AMAZON.StopIntent"
+        },
+        {
+            "intent": "GetSynonymIntent",
+            "slots": [
+                {
+                    "name": "WORD",
+                    "type": "ANY_WORD"
+                }
+            ]
+        },
+        {
+            "intent": "GetRandomSynonymIntent",
+            "slots": [
+                {
+                    "name": "WORD",
+                    "type": "ANY_WORD"
+                }
+            ]
+        },
+        {
+            "intent": "GetAllSynonymsIntent",
+            "slots": [
+                {
+                    "name": "WORD",
+                    "type": "ANY_WORD"
+                }
+            ]
+        },
+        {
+            "intent": "GetAntonymIntent",
+            "slots": [
+                {
+                    "name": "WORD",
+                    "type": "ANY_WORD"
+                }
+            ]
+        },
+        {
+            "intent": "GetRandomAntonymIntent",
+            "slots": [
+                {
+                    "name": "WORD",
+                    "type": "ANY_WORD"
+                }
+            ]
+        },
+        {
+            "intent": "GetAllAntonymsIntent",
+            "slots": [
+                {
+                    "name": "WORD",
+                    "type": "ANY_WORD"
+                }
+            ]
+        },
+        {
+            "intent": "GetPOSIntent",
+            "slots": [
+                {
+                    "name": "WORD",
+                    "type": "ANY_WORD"
+                }
+            ]
+        },
+        {
+            "intent": "GetRhymeIntent",
+            "slots": [
+                {
+                    "name": "WORD",
+                    "type": "ANY_WORD"
+                }
+            ]
+        },
+        {
+            "intent": "GetRandomRhymeIntent",
+            "slots": [
+                {
+                    "name": "WORD",
+                    "type": "ANY_WORD"
+                }
+            ]
+        },
+        {
+            "intent": "GetDefinitionIntent",
+            "slots": [
+                {
+                    "name": "WORD",
+                    "type": "ANY_WORD"
+                }
+            ]
+        },
+        {
+            "intent": "GetRandomDefinitionIntent",
+            "slots": [
+                {
+                    "name": "WORD",
+                    "type": "ANY_WORD"
+                }
+            ]
+        },
+        {
+            "intent": "GetAllDefinitionsIntent",
+            "slots": [
+                {
+                    "name": "WORD",
+                    "type": "ANY_WORD"
+                }
+            ]
+        },
+        {
+            "intent": "GetSyllablesIntent",
+            "slots": [
+                {
+                    "name": "WORD",
+                    "type": "ANY_WORD"
+                }
+            ]
+        },
+        {
+            "intent": "GetFrequencyIntent",
+            "slots": [
+                {
+                    "name": "WORD",
+                    "type": "ANY_WORD"
+                }
+            ]
+        }
+    ]
+}
