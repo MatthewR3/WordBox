@@ -58,8 +58,7 @@ def get_all_commands():
 
     session_attributes = {}
     card_title = "All Commands"
-    speech_output = "You can ask for a synonym, antonym, rhyme, definition, part of speech, syllables, or frequency of a word by saying something like 'synonym for happy'. You can \
-                        also ask for a random synonym, antonym, definition, or rhyme by saying something like 'random synonym for happy'. If you want all of them, say something like 'all synonyms for happy.'"
+    speech_output = "You can ask for a synonym, antonym, rhyme, definition, part of speech, syllables, or frequency of a word by saying something like 'synonym for happy'. You can also ask for a random synonym, antonym, definition, or rhyme by saying something like 'random synonym for happy'. If you want all of them, say something like 'all synonyms for happy.'"
     # If the user either does not reply to the welcome message or says something
     # that is not understood, they will be prompted again with this text.
     reprompt_text = "Ask for a synonym, antonym, part of speech, rhyme, definition, syllables, or frequency of a word! Or say 'all commands' to get hear all commands."
@@ -373,7 +372,7 @@ def on_intent(intent_request, session):
         return get_frequency(intent, session)
     elif intent_name == "GetPronunciationIntent":
         return get_pronunciation(intent, session)
-    elif intent_name == "AMAZON.GetAllCommandsIntent":
+    elif intent_name == "GetAllCommandsIntent":
         return get_all_commands()
     elif intent_name == "AMAZON.HelpIntent":
         return get_welcome_response()
