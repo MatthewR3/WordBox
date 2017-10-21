@@ -24,11 +24,11 @@ import os
 import json
 
 
-dev = 1
+dev = 0
 
 input_file = "freq_small.txt" if dev else "freq.txt"
 schema_output_file = "intent_schema_small.json" if dev else "intent_schema.json"
-utterances_output_file = "sample_utterances_small.json" if dev else "sample_utterances.json"
+utterances_output_file = "sample_utterances_small.txt" if dev else "sample_utterances.txt"
 
 with open(os.path.dirname(os.path.realpath(__file__)) + "/" + input_file, "r") as f:
 	all_words = [line.strip() for line in f]
@@ -48,6 +48,7 @@ custom_intents = [
 	("GetPronunciationIntent", ("pronunciation of",))
 ]
 
+
 # Intent schema
 intent_json = {"intents": [], "types": []}
 intent_json["intents"].append({"intent": "AMAZON.CancelIntent"})
@@ -64,6 +65,13 @@ for intent, utterance in custom_intents:
 	if not intent_exists:
 		intent_json["intents"].append({"intent": intent, "slots": [{"name": "Word", "type": "AMAZON.LITERAL"}]})
 
-
 with open(os.path.dirname(os.path.realpath(__file__)) + "/" + schema_output_file, "w") as f:
 	json.dump(intent_json, f)
+
+
+# Sample utterances
+all_utterances = []
+with open(os.path.dirname(os.path.realpath(__file__)) + "/" + utterances_output_file, 'w') as f:
+	for intent, utterance in custom_intents:
+		for word in all_words:
+			f.write(intent + " " + utterance[0] + " {" + word + "|Word}" + ((" " + utterance[1]) if (len(utterance) > 1) else "") + "\n")

@@ -1,0 +1,60 @@
+GetSynonymIntent a synonym for {the|Word}
+GetSynonymIntent a synonym for {of|Word}
+GetSynonymIntent a synonym for {and|Word}
+GetSynonymIntent a synonym for {a|Word}
+GetSynonymIntent a synonym for {is|Word}
+GetAntonymIntent an antonym for {the|Word}
+GetAntonymIntent an antonym for {of|Word}
+GetAntonymIntent an antonym for {and|Word}
+GetAntonymIntent an antonym for {a|Word}
+GetAntonymIntent an antonym for {is|Word}
+GetPOSIntent the part of speech for {the|Word}
+GetPOSIntent the part of speech for {of|Word}
+GetPOSIntent the part of speech for {and|Word}
+GetPOSIntent the part of speech for {a|Word}
+GetPOSIntent the part of speech for {is|Word}
+GetRhymeIntent a rhyme for {the|Word}
+GetRhymeIntent a rhyme for {of|Word}
+GetRhymeIntent a rhyme for {and|Word}
+GetRhymeIntent a rhyme for {a|Word}
+GetRhymeIntent a rhyme for {is|Word}
+GetDefinitionIntent the definition of {the|Word}
+GetDefinitionIntent the definition of {of|Word}
+GetDefinitionIntent the definition of {and|Word}
+GetDefinitionIntent the definition of {a|Word}
+GetDefinitionIntent the definition of {is|Word}
+GetDefinitionIntent define {the|Word}
+GetDefinitionIntent define {of|Word}
+GetDefinitionIntent define {and|Word}
+GetDefinitionIntent define {a|Word}
+GetDefinitionIntent define {is|Word}
+GetSyllablesIntent the syllables for {the|Word}
+GetSyllablesIntent the syllables for {of|Word}
+GetSyllablesIntent the syllables for {and|Word}
+GetSyllablesIntent the syllables for {a|Word}
+GetSyllablesIntent the syllables for {is|Word}
+GetSyllablesIntent the syllables of {the|Word}
+GetSyllablesIntent the syllables of {of|Word}
+GetSyllablesIntent the syllables of {and|Word}
+GetSyllablesIntent the syllables of {a|Word}
+GetSyllablesIntent the syllables of {is|Word}
+GetFrequencyIntent the frequency of {the|Word}
+GetFrequencyIntent the frequency of {of|Word}
+GetFrequencyIntent the frequency of {and|Word}
+GetFrequencyIntent the frequency of {a|Word}
+GetFrequencyIntent the frequency of {is|Word}
+GetFrequencyIntent how common {the|Word} is
+GetFrequencyIntent how common {of|Word} is
+GetFrequencyIntent how common {and|Word} is
+GetFrequencyIntent how common {a|Word} is
+GetFrequencyIntent how common {is|Word} is
+GetPronunciationIntent how to pronounce {the|Word}
+GetPronunciationIntent how to pronounce {of|Word}
+GetPronunciationIntent how to pronounce {and|Word}
+GetPronunciationIntent how to pronounce {a|Word}
+GetPronunciationIntent how to pronounce {is|Word}
+GetPronunciationIntent pronunciation of {the|Word}
+GetPronunciationIntent pronunciation of {of|Word}
+GetPronunciationIntent pronunciation of {and|Word}
+GetPronunciationIntent pronunciation of {a|Word}
+GetPronunciationIntent pronunciation of {is|Word}
