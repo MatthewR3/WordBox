@@ -1,0 +1,45 @@
+{
+  "session": {
+    "new": true,
+    "sessionId": "SessionId.e64122b6-fcf1-4476-a7ff-ddcd0225ce91",
+    "application": {
+      "applicationId": "amzn1.ask.skill.3ca42b71-e008-4d9a-aae7-0ea5d6b01ce9"
+    },
+    "attributes": {},
+    "user": {
+      "userId": "123"
+    }
+  },
+  "request": {
+    "type": "IntentRequest",
+    "requestId": "EdwRequestId.180a0bfe-5a24-4b4a-a840-f821513a6d24",
+    "intent": {
+      "name": "GetSynonymIntent",
+      "slots": {
+        "WORD": {
+          "name": "WORD",
+          "value": "happy"
+        }
+      }
+    },
+    "locale": "en-US",
+    "timestamp": "2017-10-21T19:18:16Z"
+  },
+  "context": {
+    "AudioPlayer": {
+      "playerActivity": "IDLE"
+    },
+    "System": {
+      "application": {
+        "applicationId": "amzn1.ask.skill.3ca42b71-e008-4d9a-aae7-0ea5d6b01ce9"
+      },
+      "user": {
+        "userId": "amzn1.ask.account.AF2Z4C2SFP3X6GUOOCGHRIXE44HB7R2CMG4TTWW63DJCBJK4LVDHC2HC6O4ZC43SXZJDDTEBPA376JN44TP7EAK57BHINQJP4QDMPMPYTNA2QMSK3NRKZ7QTVPBBPHZ53TRRSMM6WRRECHQC6BJEFAMEQX2Z2Y2PNY7KUBPOLRK7EDA2QDD2ROSSJXF54AOSJRUKTLFURRYGSVQ"
+      },
+      "device": {
+        "supportedInterfaces": {}
+      }
+    }
+  },
+  "version": "1.0"
+}

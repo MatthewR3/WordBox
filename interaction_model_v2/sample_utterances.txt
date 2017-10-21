@@ -9,4 +9,4 @@ GetSyllablesIntent the syllables of {WORD}
 GetFrequencyIntent the frequency of {WORD}
 GetFrequencyIntent how common {WORD} is
 GetPronunciationIntent how to pronounce {WORD}
-GetPronunciationIntent pronunciation of {WORD}
+GetPronunciationIntent the pronunciation of {WORD}

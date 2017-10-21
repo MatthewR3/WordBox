@@ -1,11 +1,7 @@
-# Based off of the sample Amazon Alexa skill "Space Facts"
-
-from __future__ import print_function
 import requests
 import os
 import ast
 import random
-
 
 
 # --------------- Helpers that build all of the responses ----------------------
@@ -185,6 +181,7 @@ def get_pronunciation(intent, session):
 		speech_output = "You can pronounce " + word + " a few ways. " + "".join([(("As a " + key + " it's pronounced as " + value + ". ") if key != "all" else "") for key, value in ast.literal_eval(r.text)["pronunciation"].items()])
 	response = build_speechlet_response("Pronunciation", speech_output, None, True)
 	return build_response({}, response)
+
 
 # --------------- Events ------------------
 
