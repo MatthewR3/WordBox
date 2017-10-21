@@ -7,13 +7,13 @@ a random synonym for sad
 all synonyms for happy
 all synonyms for sad
 
-an antonym for happy
+an antonym for good
 an antonym for sad
 
-a random antonym for happy
+a random antonym for good
 a random antonym for sad
 
-all antonyms for happy
+all antonyms for good
 all antonyms for sad
 
 the part of speech for dog
@@ -46,6 +46,7 @@ the frequency of dog
 how common happy is
 how common dog is
 
+# Not used in production
 how to pronounce dinosaur
 how to pronounce monarch
 

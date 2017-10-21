@@ -168,7 +168,7 @@ def get_all_antonyms(intent, session):
     elif len(antonyms_list) == 1:
         speech_output = "The only antonym for " + word + " is " +  antonyms_list[0] + "."
     else:
-        speech_output = "The antonyms for " + word + " are " + ", ".join([antonyms for antonym in antonyms_list[:-1]]) + ", and " + antonyms_list[-1] + "."
+        speech_output = "The antonyms for " + word + " are " + ", ".join([antonym for antonym in antonyms_list[:-1]]) + ", and " + antonyms_list[-1] + "."
     response = build_speechlet_response("Antonyms", speech_output, None, True)
     return build_response({}, response)
 
