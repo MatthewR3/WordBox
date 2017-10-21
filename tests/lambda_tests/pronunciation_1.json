@@ -1,47 +1,45 @@
 {
   "session": {
-    "new": false,
-    "sessionId": "amzn1.echo-api.session.sgffg",
+    "new": true,
+    "sessionId": "123",
+    "application": {
+      "applicationId": "123"
+    },
     "attributes": {},
     "user": {
-      "userId": "amzn1.ask.account.fgdfgdf"
-    },
-    "application": {
-      "applicationId": "amzn1.ask.skill.sgfgfhb"
+      "userId": "123"
     }
   },
-  "version": "1.0",
   "request": {
-    "locale": "en-US",
-    "timestamp": "2016-10-27T21:06:28Z",
     "type": "IntentRequest",
-    "requestId": "amzn1.echo-api.request.ghbdfxgbx",
+    "requestId": "123",
     "intent": {
+      "name": "GetPronunciationIntent",
       "slots": {
-        "Word": {
-          "name": "Word",
+        "WORD": {
+          "name": "WORD",
           "value": "wind"
         }
-      },
-      "name": "GetPronunciationIntent"
-    }
+      }
+    },
+    "locale": "en-US",
+    "timestamp": "2017-10-21T19:18:16Z"
   },
   "context": {
     "AudioPlayer": {
       "playerActivity": "IDLE"
     },
     "System": {
-      "device": {
-        "supportedInterfaces": {
-          "AudioPlayer": {}
-        }
-      },
       "application": {
-        "applicationId": "amzn1.ask.skill.hdhbgbf"
+        "applicationId": "123"
       },
       "user": {
-        "userId": "amzn1.ask.account.sgdfgfgd"
+        "userId": "123"
+      },
+      "device": {
+        "supportedInterfaces": {}
       }
     }
-  }
+  },
+  "version": "1.0"
 }
