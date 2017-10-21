@@ -1,12 +1,17 @@
 GetSynonymIntent a synonym for {WORD}
+GetRandomSynonymIntent a random synonym for {WORD}
+GetAllSynonymsIntent all synonyms for {WORD}
 GetAntonymIntent an antonym for {WORD}
+GetRandomAntonymIntent a random antonym for {WORD}
+GetAllAntonymsIntent all antonyms for {WORD}
 GetPOSIntent the part of speech for {WORD}
 GetRhymeIntent a rhyme for {WORD}
+GetRandomRhymeIntent a random rhyme for {WORD}
 GetDefinitionIntent the definition of {WORD}
 GetDefinitionIntent define {WORD}
+GetRandomDefinitionIntent a random definition for {WORD}
+GetAllDefinitionsIntent all definition for {WORD}
 GetSyllablesIntent the syllables for {WORD}
 GetSyllablesIntent the syllables of {WORD}
 GetFrequencyIntent the frequency of {WORD}
 GetFrequencyIntent how common {WORD} is
-GetPronunciationIntent how to pronounce {WORD}
-GetPronunciationIntent the pronunciation of {WORD}

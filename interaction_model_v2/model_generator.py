@@ -35,17 +35,24 @@ with open(os.path.dirname(os.path.realpath(__file__)) + "/" + input_file, "r") a
 
 custom_intents = [
 	("GetSynonymIntent", ("a synonym for",)),
+	("GetRandomSynonymIntent", ("a random synonym for",)),
+	("GetAllSynonymsIntent", ("all synonyms for",)),
 	("GetAntonymIntent", ("an antonym for",)),
+	("GetRandomAntonymIntent", ("a random antonym for",)),
+	("GetAllAntonymsIntent", ("all antonyms for",)),
 	("GetPOSIntent", ("the part of speech for",)),
 	("GetRhymeIntent", ("a rhyme for",)),
+	("GetRandomRhymeIntent", ("a random rhyme for",)),
 	("GetDefinitionIntent", ("the definition of",)),
 	("GetDefinitionIntent", ("define",)),
+	("GetRandomDefinitionIntent", ("a random definition for",)),
+	("GetAllDefinitionsIntent", ("all definition for",)),
 	("GetSyllablesIntent", ("the syllables for",)),
 	("GetSyllablesIntent", ("the syllables of",)),
+	# ("GetPronunciationIntent", ("how to pronounce",)),
+	# ("GetPronunciationIntent", ("pronunciation of",)),
 	("GetFrequencyIntent", ("the frequency of",)),
-	("GetFrequencyIntent", ("how common", "is")),
-	("GetPronunciationIntent", ("how to pronounce",)),
-	("GetPronunciationIntent", ("pronunciation of",))
+	("GetFrequencyIntent", ("how common", "is"))
 ]
 
 

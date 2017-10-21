@@ -1,14 +1,29 @@
 a synonym for happy
 a synonym for sad
 
+a random synonym for happy
+a random synonym for sad
+
+all synonyms for happy
+all synonyms for sad
+
 an antonym for happy
 an antonym for sad
+
+a random antonym for happy
+a random antonym for sad
+
+all antonyms for happy
+all antonyms for sad
 
 the part of speech for dog
 the part of speech for happy
 
 a rhyme for happy
 a rhyme for dog
+
+a random rhyme for happy
+a random rhyme for dog
 
 the definition of happy
 the definition of king
@@ -32,4 +47,4 @@ how to pronounce dinosaur
 how to pronounce monarch
 
 the pronunciation of dinosaur
-the pronunication of monarch
+the pronunciation of monarch
