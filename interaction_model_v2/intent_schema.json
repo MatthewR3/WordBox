@@ -10,6 +10,9 @@
             "intent": "AMAZON.StopIntent"
         },
         {
+            "intent": "GetAllCommandsIntent"
+        },
+        {
             "intent": "GetSynonymIntent",
             "slots": [
                 {

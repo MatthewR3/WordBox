@@ -46,7 +46,7 @@ custom_intents = [
 	("GetDefinitionIntent", ("the definition of",)),
 	("GetDefinitionIntent", ("define",)),
 	("GetRandomDefinitionIntent", ("a random definition for",)),
-	("GetAllDefinitionsIntent", ("all definition for",)),
+	("GetAllDefinitionsIntent", ("all definitions for",)),
 	("GetSyllablesIntent", ("the syllables for",)),
 	("GetSyllablesIntent", ("the syllables of",)),
 	# ("GetPronunciationIntent", ("how to pronounce",)),
@@ -61,6 +61,7 @@ intent_json = {"intents": []}
 intent_json["intents"].append({"intent": "AMAZON.CancelIntent"})
 intent_json["intents"].append({"intent": "AMAZON.HelpIntent"})
 intent_json["intents"].append({"intent": "AMAZON.StopIntent"})
+intent_json["intents"].append({"intent": "GetAllCommandsIntent"})
 for intent, utterance in custom_intents:
 	intent_exists = False
 	for json_intent in intent_json["intents"]:
@@ -79,5 +80,6 @@ with open(os.path.dirname(os.path.realpath(__file__)) + "/" + schema_output_file
 # Sample utterances
 all_utterances = []
 with open(os.path.dirname(os.path.realpath(__file__)) + "/" + utterances_output_file, 'w') as f:
+	f.write("GetAllCommandsIntent all commands\n")
 	for intent, utterance in custom_intents:
 		f.write(intent + " " + utterance[0] + " {WORD}" + ((" " + utterance[1]) if (len(utterance) > 1) else "") + "\n")

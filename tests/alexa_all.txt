@@ -31,6 +31,9 @@ the definition of king
 define happy
 define king
 
+all definitions of happy
+all definitions of king
+
 the syllables for happy
 the syllables for dinosaur
 

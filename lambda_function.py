@@ -114,10 +114,13 @@ def get_all_synonyms(intent, session):
         "Accept": "application/json"
     }
     r = requests.get(url, headers = headers)
-    if len(ast.literal_eval(r.text)["synonyms"]) == 0:
+    synonyms_list = ast.literal_eval(r.text)["synonyms"]
+    if len(synonyms_list) == 0:
         speech_output =  "Sorry, I couldn't find any synonyms for " + word + "."
+    elif len(synonyms_list) == 1:
+        speech_output = "The only synonym for " + word + " is " +  synonyms_list[0] + "."
     else:
-        speech_output = "The synonyms for " + word + " are " + ", ".join([synonym for synonym in ast.literal_eval(r.text)["synonyms"][:-1]]) + ", and " + ast.literal_eval(r.text)["synonyms"][-1] + "."
+        speech_output = "The synonyms for " + word + " are " + ", ".join([synonym for synonym in synonyms_list[:-1]]) + ", and " + synonyms_list[-1] + "."
     response = build_speechlet_response("Synonyms", speech_output, None, True)
     return build_response({}, response)
 
@@ -159,10 +162,13 @@ def get_all_antonyms(intent, session):
         "Accept": "application/json"
     }
     r = requests.get(url, headers = headers)
-    if len(ast.literal_eval(r.text)["antonyms"]) == 0:
+    antonyms_list = ast.literal_eval(r.text)["antonyms"]
+    if len(antonyms_list) == 0:
         speech_output = "Sorry, I couldn't find any antonyms for " + word + "."
+    elif len(antonyms_list) == 1:
+        speech_output = "The only antonym for " + word + " is " +  antonyms_list[0] + "."
     else:
-        speech_output = "The antonyms for " + word + " are " + ", ".join([antonyms for antonym in ast.literal_eval(r.text)["antonyms"][:-1]]) + ", and " + ast.literal_eval(r.text)["antonyms"][-1] + "."
+        speech_output = "The antonyms for " + word + " are " + ", ".join([antonyms for antonym in antonyms_list[:-1]]) + ", and " + antonyms_list[-1] + "."
     response = build_speechlet_response("Antonyms", speech_output, None, True)
     return build_response({}, response)
 
@@ -246,10 +252,12 @@ def get_all_definitions(intent, session):
         "Accept": "application/json"
     }
     r = requests.get(url, headers = headers)
-    if len(ast.literal_eval(r.text)["definitions"]) == 0:
+    definitions_list = ast.literal_eval(r.text)["definitions"]
+    if len(definitions_list) == 0:
         speech_output = "Sorry, I couldn't find any definitions for " + word + "."
+    elif len(definitions_list) == 1:
+        speech_output = "The only definition for " + word + " is " +  definitions_list[0] + "."
     else:
-        definitions_list = ast.literal_eval(r.text)["definitions"]
         speech_output = word + " has " + str(len(definitions_list)) + " definitions. It could mean " + ", ".join([definition["definition"] for definition in definitions_list[:-1]]) + ", or " + definitions_list[-1]["definition"] + "."
     response = build_speechlet_response("Definitions", speech_output, None, True)
     return build_response({}, response)
@@ -365,6 +373,8 @@ def on_intent(intent_request, session):
         return get_frequency(intent, session)
     elif intent_name == "GetPronunciationIntent":
         return get_pronunciation(intent, session)
+    elif intent_name == "AMAZON.GetAllCommandsIntent":
+        return get_all_commands()
     elif intent_name == "AMAZON.HelpIntent":
         return get_welcome_response()
     elif intent_name == "AMAZON.CancelIntent" or intent_name == "AMAZON.StopIntent":
