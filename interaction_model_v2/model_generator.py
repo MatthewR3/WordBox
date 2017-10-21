@@ -31,7 +31,7 @@ schema_output_file = "intent_schema_small.json" if dev else "intent_schema.json"
 utterances_output_file = "sample_utterances_small.txt" if dev else "sample_utterances.txt"
 
 with open(os.path.dirname(os.path.realpath(__file__)) + "/" + input_file, "r") as f:
-	all_words = [line.strip() for line in f]
+	all_words = list(set([line.strip() for line in f]))
 
 custom_intents = [
 	("GetSynonymIntent", ("a synonym for",)),
@@ -63,7 +63,7 @@ for intent, utterance in custom_intents:
 			intent_exists = True
 			break
 	if not intent_exists:
-		intent_json["intents"].append({"intent": intent, "slots": [{"name": "Word", "type": "AMAZON.LITERAL"}]})
+		intent_json["intents"].append({"intent": intent, "slots": [{"name": "WORD", "type": "ANY_WORD"}]})
 
 with open(os.path.dirname(os.path.realpath(__file__)) + "/" + schema_output_file, "w") as f:
 	json.dump(intent_json, f)
@@ -73,5 +73,4 @@ with open(os.path.dirname(os.path.realpath(__file__)) + "/" + schema_output_file
 all_utterances = []
 with open(os.path.dirname(os.path.realpath(__file__)) + "/" + utterances_output_file, 'w') as f:
 	for intent, utterance in custom_intents:
-		for word in all_words:
-			f.write(intent + " " + utterance[0] + " {" + word + "|Word}" + ((" " + utterance[1]) if (len(utterance) > 1) else "") + "\n")
+		f.write(intent + " " + utterance[0] + " {WORD}" + ((" " + utterance[1]) if (len(utterance) > 1) else "") + "\n")

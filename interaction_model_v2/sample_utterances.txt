@@ -1,0 +1,12 @@
+GetSynonymIntent a synonym for {WORD}
+GetAntonymIntent an antonym for {WORD}
+GetPOSIntent the part of speech for {WORD}
+GetRhymeIntent a rhyme for {WORD}
+GetDefinitionIntent the definition of {WORD}
+GetDefinitionIntent define {WORD}
+GetSyllablesIntent the syllables for {WORD}
+GetSyllablesIntent the syllables of {WORD}
+GetFrequencyIntent the frequency of {WORD}
+GetFrequencyIntent how common {WORD} is
+GetPronunciationIntent how to pronounce {WORD}
+GetPronunciationIntent pronunciation of {WORD}
