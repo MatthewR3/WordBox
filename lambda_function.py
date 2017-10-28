@@ -76,6 +76,9 @@ def handle_session_end_request():
 
 
 def get_synonym(intent, session):
+    if "value" not in intent["slots"]["WORD"]:
+        response = build_speechlet_response("Synonym", "Sorry, I couldn't recognize that word.", None, True)
+        return build_response({}, response)
     word = intent["slots"]["WORD"]["value"]
     url = "https://wordsapiv1.p.mashape.com/words/" + word + "/synonyms"
     headers = {
@@ -91,6 +94,9 @@ def get_synonym(intent, session):
     return build_response({}, response)
 
 def get_random_synonym(intent, session):
+    if "value" not in intent["slots"]["WORD"]:
+        response = build_speechlet_response("Synonym", "Sorry, I couldn't recognize that word.", None, True)
+        return build_response({}, response)
     word = intent["slots"]["WORD"]["value"]
     url = "https://wordsapiv1.p.mashape.com/words/" + word + "/synonyms"
     headers = {
@@ -106,6 +112,9 @@ def get_random_synonym(intent, session):
     return build_response({}, response)
 
 def get_all_synonyms(intent, session):
+    if "value" not in intent["slots"]["WORD"]:
+        response = build_speechlet_response("Synonyms", "Sorry, I couldn't recognize that word.", None, True)
+        return build_response({}, response)
     word = intent["slots"]["WORD"]["value"]
     url = "https://wordsapiv1.p.mashape.com/words/" + word + "/synonyms"
     headers = {
@@ -124,6 +133,9 @@ def get_all_synonyms(intent, session):
     return build_response({}, response)
 
 def get_antonym(intent, session):
+    if "value" not in intent["slots"]["WORD"]:
+        response = build_speechlet_response("Antonym", "Sorry, I couldn't recognize that word.", None, True)
+        return build_response({}, response)
     word = intent["slots"]["WORD"]["value"]
     url = "https://wordsapiv1.p.mashape.com/words/" + word + "/antonyms"
     headers = {
@@ -139,6 +151,9 @@ def get_antonym(intent, session):
     return build_response({}, response)
 
 def get_random_antonym(intent, session):
+    if "value" not in intent["slots"]["WORD"]:
+        response = build_speechlet_response("Antonym", "Sorry, I couldn't recognize that word.", None, True)
+        return build_response({}, response)
     word = intent["slots"]["WORD"]["value"]
     url = "https://wordsapiv1.p.mashape.com/words/" + word + "/antonyms"
     headers = {
@@ -154,6 +169,9 @@ def get_random_antonym(intent, session):
     return build_response({}, response)
 
 def get_all_antonyms(intent, session):
+    if "value" not in intent["slots"]["WORD"]:
+        response = build_speechlet_response("Antonyms", "Sorry, I couldn't recognize that word.", None, True)
+        return build_response({}, response)
     word = intent["slots"]["WORD"]["value"]
     url = "https://wordsapiv1.p.mashape.com/words/" + word + "/antonyms"
     headers = {
@@ -172,6 +190,9 @@ def get_all_antonyms(intent, session):
     return build_response({}, response)
 
 def get_pos(intent, session):
+    if "value" not in intent["slots"]["WORD"]:
+        response = build_speechlet_response("Part of Speech", "Sorry, I couldn't recognize that word.", None, True)
+        return build_response({}, response)
     word = intent["slots"]["WORD"]["value"]
     url = "https://wordsapiv1.p.mashape.com/words/" + word
     headers = {
@@ -184,6 +205,9 @@ def get_pos(intent, session):
     return build_response({}, response)
 
 def get_rhyme(intent, session):
+    if "value" not in intent["slots"]["WORD"]:
+        response = build_speechlet_response("Rhyme", "Sorry, I couldn't recognize that word.", None, True)
+        return build_response({}, response)
     word = intent["slots"]["WORD"]["value"]
     url = "https://wordsapiv1.p.mashape.com/words/" + word + "/rhymes"
     headers = {
@@ -199,6 +223,9 @@ def get_rhyme(intent, session):
     return build_response({}, response)
 
 def get_random_rhyme(intent, session):
+    if "value" not in intent["slots"]["WORD"]:
+        response = build_speechlet_response("Rhyme", "Sorry, I couldn't recognize that word.", None, True)
+        return build_response({}, response)
     word = intent["slots"]["WORD"]["value"]
     url = "https://wordsapiv1.p.mashape.com/words/" + word + "/rhymes"
     headers = {
@@ -214,6 +241,9 @@ def get_random_rhyme(intent, session):
     return build_response({}, response)
 
 def get_definition(intent, session):
+    if "value" not in intent["slots"]["WORD"]:
+        response = build_speechlet_response("Definition", "Sorry, I couldn't recognize that word.", None, True)
+        return build_response({}, response)
     word = intent["slots"]["WORD"]["value"]
     url = "https://wordsapiv1.p.mashape.com/words/" + word + "/definitions"
     headers = {
@@ -229,6 +259,9 @@ def get_definition(intent, session):
     return build_response({}, response)
 
 def get_random_definition(intent, session):
+    if "value" not in intent["slots"]["WORD"]:
+        response = build_speechlet_response("Definition", "Sorry, I couldn't recognize that word.", None, True)
+        return build_response({}, response)
     word = intent["slots"]["WORD"]["value"]
     url = "https://wordsapiv1.p.mashape.com/words/" + word + "/definitions"
     headers = {
@@ -244,6 +277,9 @@ def get_random_definition(intent, session):
     return build_response({}, response)
 
 def get_all_definitions(intent, session):
+    if "value" not in intent["slots"]["WORD"]:
+        response = build_speechlet_response("Definitions", "Sorry, I couldn't recognize that word.", None, True)
+        return build_response({}, response)
     word = intent["slots"]["WORD"]["value"]
     url = "https://wordsapiv1.p.mashape.com/words/" + word + "/definitions"
     headers = {
@@ -262,6 +298,9 @@ def get_all_definitions(intent, session):
     return build_response({}, response)
 
 def get_syllables(intent, session):
+    if "value" not in intent["slots"]["WORD"]:
+        response = build_speechlet_response("Syllables", "Sorry, I couldn't recognize that word.", None, True)
+        return build_response({}, response)
     word = intent["slots"]["WORD"]["value"]
     url = "https://wordsapiv1.p.mashape.com/words/" + word + "/syllables"
     headers = {
@@ -278,6 +317,9 @@ def get_syllables(intent, session):
 
 # NOTE: Not used in production
 def get_pronunciation(intent, session):
+    if "value" not in intent["slots"]["WORD"]:
+        response = build_speechlet_response("Pronunciation", "Sorry, I couldn't recognize that word.", None, True)
+        return build_response({}, response)
     word = intent["slots"]["WORD"]["value"]
     url = "https://wordsapiv1.p.mashape.com/words/" + word + "/pronunciation"
     headers = {
@@ -297,6 +339,9 @@ def get_pronunciation(intent, session):
     return build_response({}, response)
 
 def get_frequency(intent, session):
+    if "value" not in intent["slots"]["WORD"]:
+        response = build_speechlet_response("Frequency", "Sorry, I couldn't recognize that word.", None, True)
+        return build_response({}, response)
     word = intent["slots"]["WORD"]["value"]
     url = "https://wordsapiv1.p.mashape.com/words/" + word + "/frequency"
     headers = {
