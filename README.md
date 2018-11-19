@@ -28,9 +28,36 @@ Here is how to call it using Alexa:
 * Syllables: "Alexa, ask word box for the syllables of {Word}."
 * Frequency: "Alexa, ask word box for the frequency of {Word}."
 
-## Implementation
+## Development
 
-WordBox uses `intent_schema.json` and `sample_utterances.json` (located within `interaction_model_v2`) for its interaction model, and an AWS lambda function `lambda_function.py` for the backend code. The lambda function passes off the Alexa request to one of the four intent functions, where a call is made to the [WordsAPI](https://market.mashape.com/wordsapi/wordsapi) through Mashape. Also included in the repository is `wordbox_env.zip`, which contains the environment I developed in and deployed directly to Amazon AWS Lambda.
+WordBox uses the Alexa development suite to parse the speech requests, then passes them to the AWS lambda function `lambda_function.py` to retrieve the proper response from the Words API.
+
+### Alexa
+
+The `skill.json` file defines the skill's public-facing information for each English dialect that is supported.
+
+The `skill_manifest.json` file defines the intent schema for the skill. This can be imported directly into the Alexa web console and interacted with from there.
+
+In addition to the 3-4 built-in intents, there are 15 custom intents. Each one follows the same constraints, requiring a slot named `WORD` of type `AMAZON.SearchQuery` - this slot type allows free-form speech input to be captured and passed on to the AWS Lambda function.
+
+The `tests` directory contains tests that can be inputted to the Alexa development suite testing console via the "Manual JSON" tab. Note that the tests are not yet comprehensive.
+
+### AWS Lambda
+
+`lambda_function.py` defines the backend logic for the skill. The script is a wrapper on top of the Words API, parsing the request passed in from the Alexa suite and handling API calls. It is deployed on AWS Lambda, with built-in logging via CloudWatch.
+
+To use the script in AWS Lambda, it must be submitted with an environment containing all necessary Python packages - this is contained in the `wordbox_env` directory, which can be zipped and submitted to the AWS Lambda console. Logging through CloudWatch can be implemented by simply printing to stdout.
+
+### Deployment
+
+To ensure a successful deployment, ensure the following:
+
+1. The sample utterances and example phrases for the skills match in the Alexa development suite console.
+2. Each intent in `lambda_function.py` returns a proper response both in the AWS Lambda testing console.
+3. Each intent returns a proper response in the Alexa development suite testing console.
+4. Each intent properly handles incorrect slot values, missing values, and other unexpected usages in the Alexa development suite testing console.
+5. The AWS Lambda ARN in the "Endpoint" tab of the Alexa development suite points to the correct version of the WordBox_Dev Lambda function.
+6. The "Validation" and "Functional test" tests in the Alexa development suite pass without errors.
 
 ## Using the Code
 
