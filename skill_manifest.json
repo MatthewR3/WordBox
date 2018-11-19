@@ -1,0 +1,204 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "word box",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "GetAllCommandsIntent",
+                    "slots": [],
+                    "samples": [
+                        "all commands"
+                    ]
+                },
+                {
+                    "name": "GetSynonymIntent",
+                    "slots": [
+                        {
+                            "name": "WORD",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "a synonym for {WORD}"
+                    ]
+                },
+                {
+                    "name": "GetRandomSynonymIntent",
+                    "slots": [
+                        {
+                            "name": "WORD",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "a random synonym for {WORD}"
+                    ]
+                },
+                {
+                    "name": "GetAllSynonymsIntent",
+                    "slots": [
+                        {
+                            "name": "WORD",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "all synonyms for {WORD}"
+                    ]
+                },
+                {
+                    "name": "GetAntonymIntent",
+                    "slots": [
+                        {
+                            "name": "WORD",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "an antonym for {WORD}"
+                    ]
+                },
+                {
+                    "name": "GetRandomAntonymIntent",
+                    "slots": [
+                        {
+                            "name": "WORD",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "a random antonym for {WORD}"
+                    ]
+                },
+                {
+                    "name": "GetAllAntonymsIntent",
+                    "slots": [
+                        {
+                            "name": "WORD",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "all antonyms for {WORD}"
+                    ]
+                },
+                {
+                    "name": "GetPOSIntent",
+                    "slots": [
+                        {
+                            "name": "WORD",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "the part of speech for {WORD}"
+                    ]
+                },
+                {
+                    "name": "GetRhymeIntent",
+                    "slots": [
+                        {
+                            "name": "WORD",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "a rhyme for {WORD}"
+                    ]
+                },
+                {
+                    "name": "GetRandomRhymeIntent",
+                    "slots": [
+                        {
+                            "name": "WORD",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "a random rhyme for {WORD}"
+                    ]
+                },
+                {
+                    "name": "GetDefinitionIntent",
+                    "slots": [
+                        {
+                            "name": "WORD",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "the definition of {WORD}",
+                        "define {WORD}"
+                    ]
+                },
+                {
+                    "name": "GetRandomDefinitionIntent",
+                    "slots": [
+                        {
+                            "name": "WORD",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "a random definition for {WORD}"
+                    ]
+                },
+                {
+                    "name": "GetAllDefinitionsIntent",
+                    "slots": [
+                        {
+                            "name": "WORD",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "all definitions for {WORD}"
+                    ]
+                },
+                {
+                    "name": "GetSyllablesIntent",
+                    "slots": [
+                        {
+                            "name": "WORD",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "the syllables for {WORD}",
+                        "the syllables of {WORD}"
+                    ]
+                },
+                {
+                    "name": "GetFrequencyIntent",
+                    "slots": [
+                        {
+                            "name": "WORD",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "the frequency of {WORD}",
+                        "how common {WORD} is"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                }
+            ],
+            "types": []
+        }
+    }
+}
