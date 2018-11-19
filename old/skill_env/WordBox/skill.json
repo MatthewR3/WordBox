@@ -1,0 +1,153 @@
+{
+  "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "summary": "Find the synonyms, antonyms, rhymes, definitions, and more of any word!",
+          "examplePhrases": [
+            "Alexa, ask word box for a synonym for happy.",
+            "Alexa, ask word box for a random antonym for excited.",
+            "Alexa, ask word box for all definitions of cool."
+          ],
+          "keywords": [
+            "dictionary",
+            "thesaurus",
+            "word",
+            "speech",
+            "synonym",
+            "antonym",
+            "rhyme",
+            "definition",
+            "syllables",
+            "frequency"
+          ],
+          "name": "WordBox",
+          "smallIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/878e89a5314e47d3ac0fd6767c4e1f83/APP_ICON?versionId=L9.Sm2rYoG1ZoXJqRPA_GswgbtJEaD8o&AWSAccessKeyId=AKIAJFEYRBGIHK2BBYKA&Expires=1539814223&Signature=teNmYOqSwKsW7BH6%2BAM8actv3jU%3D",
+          "description": "Broaden your vocabulary with WordBox. Ask for a synonym, antonym, rhyme, definition, part of speech, frequency, or syllables of a word!",
+          "largeIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/3aff17b07b30412e86a623715b072d66/APP_ICON_LARGE?versionId=QuCZuGnLSBC_Nvp._l7PAi6BbGsVHWdY&AWSAccessKeyId=AKIAJFEYRBGIHK2BBYKA&Expires=1539814223&Signature=HDKnzdrCtphSGsbXU0ibai4%2Fyis%3D"
+        },
+        "en-CA": {
+          "summary": "Find the synonyms, antonyms, rhymes, definitions, and more of any word!",
+          "examplePhrases": [
+            "Alexa, ask word box for a synonym for happy.",
+            "Alexa, ask word box for a random antonym for excited.",
+            "Alexa, ask word box for all definitions of cool."
+          ],
+          "keywords": [
+            "dictionary",
+            "thesaurus",
+            "word",
+            "speech",
+            "synonym",
+            "antonym",
+            "rhyme",
+            "definition",
+            "syllables",
+            "frequency"
+          ],
+          "name": "WordBox",
+          "smallIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/878e89a5314e47d3ac0fd6767c4e1f83/APP_ICON?versionId=L9.Sm2rYoG1ZoXJqRPA_GswgbtJEaD8o&AWSAccessKeyId=AKIAJFEYRBGIHK2BBYKA&Expires=1539814223&Signature=teNmYOqSwKsW7BH6%2BAM8actv3jU%3D",
+          "description": "Broaden your vocabulary with WordBox. Ask for a synonym, antonym, rhyme, definition, part of speech, frequency, or syllables of a word!",
+          "largeIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/3aff17b07b30412e86a623715b072d66/APP_ICON_LARGE?versionId=QuCZuGnLSBC_Nvp._l7PAi6BbGsVHWdY&AWSAccessKeyId=AKIAJFEYRBGIHK2BBYKA&Expires=1539814223&Signature=HDKnzdrCtphSGsbXU0ibai4%2Fyis%3D"
+        },
+        "en-IN": {
+          "summary": "Find the synonyms, antonyms, rhymes, definitions, and more of any word!",
+          "examplePhrases": [
+            "Alexa, ask word box for a synonym for happy.",
+            "Alexa, ask word box for a random antonym for excited.",
+            "Alexa, ask word box for all definitions of cool."
+          ],
+          "keywords": [
+            "dictionary",
+            "thesaurus",
+            "word",
+            "speech",
+            "synonym",
+            "antonym",
+            "rhyme",
+            "definition",
+            "syllables",
+            "frequency"
+          ],
+          "name": "WordBox",
+          "smallIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/878e89a5314e47d3ac0fd6767c4e1f83/APP_ICON?versionId=L9.Sm2rYoG1ZoXJqRPA_GswgbtJEaD8o&AWSAccessKeyId=AKIAJFEYRBGIHK2BBYKA&Expires=1539814223&Signature=teNmYOqSwKsW7BH6%2BAM8actv3jU%3D",
+          "description": "Broaden your vocabulary with WordBox. Ask for a synonym, antonym, rhyme, definition, part of speech, frequency, or syllables of a word!",
+          "largeIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/3aff17b07b30412e86a623715b072d66/APP_ICON_LARGE?versionId=QuCZuGnLSBC_Nvp._l7PAi6BbGsVHWdY&AWSAccessKeyId=AKIAJFEYRBGIHK2BBYKA&Expires=1539814223&Signature=HDKnzdrCtphSGsbXU0ibai4%2Fyis%3D"
+        },
+        "en-AU": {
+          "summary": "Find the synonyms, antonyms, rhymes, definitions, and more of any word!",
+          "examplePhrases": [
+            "Alexa, ask word box for a synonym for happy.",
+            "Alexa, ask word box for a random antonym for excited.",
+            "Alexa, ask word box for all definitions of cool."
+          ],
+          "keywords": [
+            "dictionary",
+            "thesaurus",
+            "word",
+            "speech",
+            "synonym",
+            "antonym",
+            "rhyme",
+            "definition",
+            "syllables",
+            "frequency"
+          ],
+          "name": "WordBox",
+          "smallIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/878e89a5314e47d3ac0fd6767c4e1f83/APP_ICON?versionId=L9.Sm2rYoG1ZoXJqRPA_GswgbtJEaD8o&AWSAccessKeyId=AKIAJFEYRBGIHK2BBYKA&Expires=1539814223&Signature=teNmYOqSwKsW7BH6%2BAM8actv3jU%3D",
+          "description": "Broaden your vocabulary with WordBox. Ask for a synonym, antonym, rhyme, definition, part of speech, frequency, or syllables of a word!",
+          "largeIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/3aff17b07b30412e86a623715b072d66/APP_ICON_LARGE?versionId=QuCZuGnLSBC_Nvp._l7PAi6BbGsVHWdY&AWSAccessKeyId=AKIAJFEYRBGIHK2BBYKA&Expires=1539814223&Signature=HDKnzdrCtphSGsbXU0ibai4%2Fyis%3D"
+        },
+        "en-GB": {
+          "summary": "Find the synonyms, antonyms, rhymes, definitions, and more of any word!",
+          "examplePhrases": [
+            "Alexa, ask word box for a synonym for happy.",
+            "Alexa, ask word box for a random antonym for excited.",
+            "Alexa, ask word box for all definitions of cool."
+          ],
+          "keywords": [
+            "dictionary",
+            "thesaurus",
+            "word",
+            "speech",
+            "synonym",
+            "antonym",
+            "rhyme",
+            "definition",
+            "syllables",
+            "frequency"
+          ],
+          "name": "WordBox",
+          "smallIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/878e89a5314e47d3ac0fd6767c4e1f83/APP_ICON?versionId=L9.Sm2rYoG1ZoXJqRPA_GswgbtJEaD8o&AWSAccessKeyId=AKIAJFEYRBGIHK2BBYKA&Expires=1539814223&Signature=teNmYOqSwKsW7BH6%2BAM8actv3jU%3D",
+          "description": "Broaden your vocabulary with WordBox. Ask for a synonym, antonym, rhyme, definition, part of speech, frequency, or syllables of a word!",
+          "largeIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/3aff17b07b30412e86a623715b072d66/APP_ICON_LARGE?versionId=QuCZuGnLSBC_Nvp._l7PAi6BbGsVHWdY&AWSAccessKeyId=AKIAJFEYRBGIHK2BBYKA&Expires=1539814223&Signature=HDKnzdrCtphSGsbXU0ibai4%2Fyis%3D"
+        }
+      },
+      "isAvailableWorldwide": true,
+      "testingInstructions": "No specific hardware or software required; should work out of the box with the proper voice command. Examples:\n\na synonym for happy\na synonym for sad\n\na random synonym for happy\na random synonym for sad\n\nall synonyms for happy\nall synonyms for sad\n\nan antonym for good\nan antonym for sad\n\na random antonym for good\na random antonym for sad\n\nall antonyms for good\nall antonyms for sad\n\nthe part of speech for dog\nthe part of speech for happy\n\na rhyme for happy\na rhyme for dog\n\na random rhyme for happy\na random rhyme for dog\n\nthe definition of happy\nthe definition of king\n\ndefine happy\ndefine king\n\nall definitions of happy\nall definitions of king\n\nthe syllables for happy\nthe syllables for dinosaur\n\nthe syllables of happy\nthe syllables of dinosaur\n\nthe frequency of happy\nthe frequency of dog\n\nhow common happy is\nhow common dog is",
+      "category": "EDUCATION_AND_REFERENCE",
+      "distributionCountries": []
+    },
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "arn:aws:lambda:us-east-1:630710168004:function:WordBox_Dev:8"
+        },
+        "interfaces": [
+          {
+            "type": "CAN_FULFILL_INTENT_REQUEST"
+          }
+        ]
+      }
+    },
+    "manifestVersion": "1.0",
+    "permissions": [],
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "isExportCompliant": true,
+      "containsAds": false,
+      "isChildDirected": false,
+      "usesPersonalInfo": false
+    }
+  }
+}

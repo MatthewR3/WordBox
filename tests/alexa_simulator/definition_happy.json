@@ -1,0 +1,132 @@
+{
+    "event": {
+        "header": {
+            "namespace": "Text",
+            "name": "TextMessage",
+            "messageId": "messageId",
+            "dialogRequestId": "c56daa23-b74d-4d9e-9ec1-c1be7be2b620"
+        },
+        "payload": {
+            "textMessage": "definition of happy"
+        }
+    },
+    "context": [
+        {
+            "header": {
+                "namespace": "System",
+                "name": "SettingsState",
+                "payloadVersion": "1"
+            },
+            "payload": {
+                "settings": [
+                    {
+                        "key": "com.amazon.alexa.characteristics.viewport.experiences",
+                        "value": "[{\"arcMinuteWidth\":\"246\",\"arcMinuteHeight\":\"144\",\"canRotate\":\"false\",\"canResize\":\"false\"}]"
+                    },
+                    {
+                        "key": "com.amazon.alexa.characteristics.viewport.shape",
+                        "value": "RECTANGLE"
+                    },
+                    {
+                        "key": "com.amazon.alexa.characteristics.viewport.pixelWidth",
+                        "value": "1024"
+                    },
+                    {
+                        "key": "com.amazon.alexa.characteristics.viewport.pixelHeight",
+                        "value": "600"
+                    },
+                    {
+                        "key": "com.amazon.alexa.characteristics.viewport.dpi",
+                        "value": "160"
+                    },
+                    {
+                        "key": "com.amazon.alexa.characteristics.viewport.currentPixelWidth",
+                        "value": "1024"
+                    },
+                    {
+                        "key": "com.amazon.alexa.characteristics.viewport.currentPixelHeight",
+                        "value": "600"
+                    },
+                    {
+                        "key": "com.amazon.alexa.characteristics.viewport.touch",
+                        "value": "[\"SINGLE\"]"
+                    }
+                ]
+            }
+        },
+        {
+            "header": {
+                "namespace": "SpeechSynthesizer",
+                "name": "SpeechState"
+            },
+            "payload": {
+                "token": "amzn1.as-ct.v1.Domain:Application:Knowledge#ACRI#55b52d87-62f6-464f-bcbd-646206428674",
+                "offsetInMilliseconds": 1000,
+                "playerActivity": "FINISHED"
+            }
+        },
+        {
+            "header": {
+                "namespace": "AudioPlayer",
+                "name": "PlaybackState"
+            },
+            "payload": {
+                "token": "",
+                "offsetInMilliseconds": 0,
+                "playerActivity": "IDLE"
+            }
+        },
+        {
+            "header": {
+                "namespace": "Alerts",
+                "name": "AlertsState"
+            },
+            "payload": {
+                "activeAlerts": [],
+                "allAlerts": []
+            }
+        },
+        {
+            "header": {
+                "namespace": "VisualFocusManager",
+                "name": "VisualFocusState"
+            },
+            "payload": {
+                "inFocus": {
+                    "component": "ListRenderer",
+                    "idleTimeInMilliseconds": 0
+                }
+            }
+        },
+        {
+            "header": {
+                "namespace": "AudioFocusManager",
+                "name": "AudioFocusState"
+            },
+            "payload": {
+                "dialog": {
+                    "component": "SpeechSynthesizer",
+                    "idleTimeInMilliseconds": 0
+                }
+            }
+        },
+        {
+            "header": {
+                "namespace": "ListRenderer",
+                "name": "RenderedListState"
+            },
+            "payload": {
+                "listToken": "amzn1.as-lt.v1.Domain:Application:Knowledge#LRID#722ef19e-e100-485e-b3de-9f376083a74a&PRID&UNKNOWN_PRESENTATION_DOMAIN&PRID&#cf552b53-4953-4515-a420-0872f5ae2a8c",
+                "itemsVisibleOnScreen": [],
+                "selectedItems": [],
+                "focusedItem": {},
+                "renderedItemDetail": {
+                    "listItemIdentifier": "cf552b53-4953-4515-a420-0872f5ae2a8c",
+                    "ordinalNumber": 1
+                },
+                "highestOrdinalSeen": 1,
+                "lastItemOrdinal": 1
+            }
+        }
+    ]
+}

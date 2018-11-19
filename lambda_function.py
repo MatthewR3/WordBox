@@ -80,6 +80,7 @@ def get_synonym(intent, session):
         response = build_speechlet_response("Synonym", "Sorry, I couldn't recognize that word.", None, True)
         return build_response({}, response)
     word = intent["slots"]["WORD"]["value"]
+    print("---GETTING SYNONYM OF " + word)
     url = "https://wordsapiv1.p.mashape.com/words/" + word + "/synonyms"
     headers = {
         "X-Mashape-Key": os.environ["MASHAPE_KEY_PRODUCTION"],
@@ -98,6 +99,7 @@ def get_random_synonym(intent, session):
         response = build_speechlet_response("Synonym", "Sorry, I couldn't recognize that word.", None, True)
         return build_response({}, response)
     word = intent["slots"]["WORD"]["value"]
+    print("---GETTING RANDOM SYNONYM OF " + word)
     url = "https://wordsapiv1.p.mashape.com/words/" + word + "/synonyms"
     headers = {
         "X-Mashape-Key": os.environ["MASHAPE_KEY_PRODUCTION"],
@@ -116,6 +118,7 @@ def get_all_synonyms(intent, session):
         response = build_speechlet_response("Synonyms", "Sorry, I couldn't recognize that word.", None, True)
         return build_response({}, response)
     word = intent["slots"]["WORD"]["value"]
+    print("---GETTING ALL SYNONYMS OF " + word)
     url = "https://wordsapiv1.p.mashape.com/words/" + word + "/synonyms"
     headers = {
         "X-Mashape-Key": os.environ["MASHAPE_KEY_PRODUCTION"],
@@ -137,6 +140,7 @@ def get_antonym(intent, session):
         response = build_speechlet_response("Antonym", "Sorry, I couldn't recognize that word.", None, True)
         return build_response({}, response)
     word = intent["slots"]["WORD"]["value"]
+    print("---GETTING ANTONYM OF " + word)
     url = "https://wordsapiv1.p.mashape.com/words/" + word + "/antonyms"
     headers = {
         "X-Mashape-Key": os.environ["MASHAPE_KEY_PRODUCTION"],
@@ -155,6 +159,7 @@ def get_random_antonym(intent, session):
         response = build_speechlet_response("Antonym", "Sorry, I couldn't recognize that word.", None, True)
         return build_response({}, response)
     word = intent["slots"]["WORD"]["value"]
+    print("---GETTING RANDOM ANTONYM OF " + word)
     url = "https://wordsapiv1.p.mashape.com/words/" + word + "/antonyms"
     headers = {
         "X-Mashape-Key": os.environ["MASHAPE_KEY_PRODUCTION"],
@@ -173,6 +178,7 @@ def get_all_antonyms(intent, session):
         response = build_speechlet_response("Antonyms", "Sorry, I couldn't recognize that word.", None, True)
         return build_response({}, response)
     word = intent["slots"]["WORD"]["value"]
+    print("---GETTING ALL ANTONYMS OF " + word)
     url = "https://wordsapiv1.p.mashape.com/words/" + word + "/antonyms"
     headers = {
         "X-Mashape-Key": os.environ["MASHAPE_KEY_PRODUCTION"],
@@ -194,6 +200,7 @@ def get_pos(intent, session):
         response = build_speechlet_response("Part of Speech", "Sorry, I couldn't recognize that word.", None, True)
         return build_response({}, response)
     word = intent["slots"]["WORD"]["value"]
+    print("---GETTING PART OF SPEECH OF " + word)
     url = "https://wordsapiv1.p.mashape.com/words/" + word
     headers = {
         "X-Mashape-Key": os.environ["MASHAPE_KEY_PRODUCTION"],
@@ -209,6 +216,7 @@ def get_rhyme(intent, session):
         response = build_speechlet_response("Rhyme", "Sorry, I couldn't recognize that word.", None, True)
         return build_response({}, response)
     word = intent["slots"]["WORD"]["value"]
+    print("---GETTING RHYME OF " + word)
     url = "https://wordsapiv1.p.mashape.com/words/" + word + "/rhymes"
     headers = {
         "X-Mashape-Key": os.environ["MASHAPE_KEY_PRODUCTION"],
@@ -227,6 +235,7 @@ def get_random_rhyme(intent, session):
         response = build_speechlet_response("Rhyme", "Sorry, I couldn't recognize that word.", None, True)
         return build_response({}, response)
     word = intent["slots"]["WORD"]["value"]
+    print("---GETTING RANDOM RHYME OF " + word)
     url = "https://wordsapiv1.p.mashape.com/words/" + word + "/rhymes"
     headers = {
         "X-Mashape-Key": os.environ["MASHAPE_KEY_PRODUCTION"],
@@ -245,6 +254,7 @@ def get_definition(intent, session):
         response = build_speechlet_response("Definition", "Sorry, I couldn't recognize that word.", None, True)
         return build_response({}, response)
     word = intent["slots"]["WORD"]["value"]
+    print("---GETTING DEFINITION OF " + word)
     url = "https://wordsapiv1.p.mashape.com/words/" + word + "/definitions"
     headers = {
         "X-Mashape-Key": os.environ["MASHAPE_KEY_PRODUCTION"],
@@ -263,6 +273,7 @@ def get_random_definition(intent, session):
         response = build_speechlet_response("Definition", "Sorry, I couldn't recognize that word.", None, True)
         return build_response({}, response)
     word = intent["slots"]["WORD"]["value"]
+    print("---GETTING RANDOM DEFINITION OF " + word)
     url = "https://wordsapiv1.p.mashape.com/words/" + word + "/definitions"
     headers = {
         "X-Mashape-Key": os.environ["MASHAPE_KEY_PRODUCTION"],
@@ -281,6 +292,7 @@ def get_all_definitions(intent, session):
         response = build_speechlet_response("Definitions", "Sorry, I couldn't recognize that word.", None, True)
         return build_response({}, response)
     word = intent["slots"]["WORD"]["value"]
+    print("---GETTING ALL DEFINITIONS OF " + word)
     url = "https://wordsapiv1.p.mashape.com/words/" + word + "/definitions"
     headers = {
         "X-Mashape-Key": os.environ["MASHAPE_KEY_PRODUCTION"],
@@ -302,6 +314,7 @@ def get_syllables(intent, session):
         response = build_speechlet_response("Syllables", "Sorry, I couldn't recognize that word.", None, True)
         return build_response({}, response)
     word = intent["slots"]["WORD"]["value"]
+    print("---GETTING SYLLABLES OF " + word)
     url = "https://wordsapiv1.p.mashape.com/words/" + word + "/syllables"
     headers = {
         "X-Mashape-Key": os.environ["MASHAPE_KEY_PRODUCTION"],
@@ -321,6 +334,7 @@ def get_pronunciation(intent, session):
         response = build_speechlet_response("Pronunciation", "Sorry, I couldn't recognize that word.", None, True)
         return build_response({}, response)
     word = intent["slots"]["WORD"]["value"]
+    print("---GETTING PRONUNCIATION OF " + word)
     url = "https://wordsapiv1.p.mashape.com/words/" + word + "/pronunciation"
     headers = {
         "X-Mashape-Key": os.environ["MASHAPE_KEY_PRODUCTION"],
@@ -343,6 +357,7 @@ def get_frequency(intent, session):
         response = build_speechlet_response("Frequency", "Sorry, I couldn't recognize that word.", None, True)
         return build_response({}, response)
     word = intent["slots"]["WORD"]["value"]
+    print("---GETTING FREQUENCY OF " + word)
     url = "https://wordsapiv1.p.mashape.com/words/" + word + "/frequency"
     headers = {
         "X-Mashape-Key": os.environ["MASHAPE_KEY_PRODUCTION"],
@@ -386,45 +401,53 @@ def on_intent(intent_request, session):
     intent = intent_request['intent']
     intent_name = intent_request['intent']['name']
 
+    print("---INTENT: " + intent_name)
+
     # Dispatch to your skill's intent handlers
-    if intent_name == "GetSynonymIntent":
-        return get_synonym(intent, session)
-    elif intent_name == "GetRandomSynonymIntent":
-        return get_random_synonym(intent, session)
-    elif intent_name == "GetAllSynonymsIntent":
-        return get_all_synonyms(intent, session)
-    elif intent_name == "GetAntonymIntent":
-        return get_antonym(intent, session)
-    elif intent_name == "GetRandomAntonymIntent":
-        return get_random_antonym(intent, session)
-    elif intent_name == "GetAllAntonymsIntent":
-        return get_all_antonyms(intent, session)
-    elif intent_name == "GetPOSIntent":
-        return get_pos(intent, session)
-    elif intent_name == "GetRhymeIntent":
-        return get_rhyme(intent, session)
-    elif intent_name == "GetRandomRhymeIntent":
-        return get_random_rhyme(intent, session)
-    elif intent_name == "GetDefinitionIntent":
-        return get_definition(intent, session)
-    elif intent_name == "GetRandomDefinitionIntent":
-        return get_random_definition(intent, session)
-    elif intent_name == "GetAllDefinitionsIntent":
-        return get_all_definitions(intent, session)
-    elif intent_name == "GetSyllablesIntent":
-        return get_syllables(intent, session)
-    elif intent_name == "GetFrequencyIntent":
-        return get_frequency(intent, session)
-    elif intent_name == "GetPronunciationIntent":
-        return get_pronunciation(intent, session)
-    elif intent_name == "GetAllCommandsIntent":
-        return get_all_commands()
-    elif intent_name == "AMAZON.HelpIntent":
-        return get_welcome_response()
-    elif intent_name == "AMAZON.CancelIntent" or intent_name == "AMAZON.StopIntent":
-        return handle_session_end_request()
-    else:
-        raise ValueError("Invalid intent")
+    try:
+        if intent_name == "GetSynonymIntent":
+            return get_synonym(intent, session)
+        elif intent_name == "GetRandomSynonymIntent":
+            return get_random_synonym(intent, session)
+        elif intent_name == "GetAllSynonymsIntent":
+            return get_all_synonyms(intent, session)
+        elif intent_name == "GetAntonymIntent":
+            return get_antonym(intent, session)
+        elif intent_name == "GetRandomAntonymIntent":
+            return get_random_antonym(intent, session)
+        elif intent_name == "GetAllAntonymsIntent":
+            return get_all_antonyms(intent, session)
+        elif intent_name == "GetPOSIntent":
+            return get_pos(intent, session)
+        elif intent_name == "GetRhymeIntent":
+            return get_rhyme(intent, session)
+        elif intent_name == "GetRandomRhymeIntent":
+            return get_random_rhyme(intent, session)
+        elif intent_name == "GetDefinitionIntent":
+            return get_definition(intent, session)
+        elif intent_name == "GetRandomDefinitionIntent":
+            return get_random_definition(intent, session)
+        elif intent_name == "GetAllDefinitionsIntent":
+            return get_all_definitions(intent, session)
+        elif intent_name == "GetSyllablesIntent":
+            return get_syllables(intent, session)
+        elif intent_name == "GetFrequencyIntent":
+            return get_frequency(intent, session)
+        elif intent_name == "GetPronunciationIntent":
+            return get_pronunciation(intent, session)
+        elif intent_name == "GetAllCommandsIntent":
+            return get_all_commands()
+        elif intent_name == "AMAZON.HelpIntent":
+            return get_welcome_response()
+        elif intent_name == "AMAZON.CancelIntent" or intent_name == "AMAZON.StopIntent":
+            return handle_session_end_request()
+        else:
+            response = build_speechlet_response("Error", "Sorry, I don't know that command. I can find definitions, synonyms, antonyms, and more if you say something like 'a synonym for happy'.", None, True)
+            return build_response({}, response)
+
+    except:
+        response = build_speechlet_response("Error", "Sorry, I don't know that word!", None, True)
+        return build_response({}, response)
 
 
 def on_session_ended(session_ended_request, session):
